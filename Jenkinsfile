@@ -3,8 +3,10 @@ node {
     if (!fileExists ('Dockerfile')) {
       echo 'NO Docker file'
     }
+    sh 'pwd'
     sh 'ls -lart'
+    
     echo '.......................................'
-    sh 'docker build   --file .docker/Dockerfile   -t php-docker .'
+    //sh 'docker build   --file .docker/Dockerfile   -t php-docker .'
     // kubernetes.image().withName("demojenkins").build().fromPath(".")
 }
