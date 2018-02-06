@@ -3,5 +3,5 @@ node {
     if (!fileExists ('Dockerfile')) {
       echo 'NO Docker file'
     }
-    kubernetes.image().withName("demojenkins").build().fromPath(".docker/Dockerfile")
+    kubernetes.image().withName("demojenkins").build().fromPath(".")
 }
