@@ -5,6 +5,6 @@ node {
     }
     sh 'ls -lart'
     echo '.......................................'
-    
+    sh 'docker build   --file .docker/Dockerfile   -t php-docker .'
     // kubernetes.image().withName("demojenkins").build().fromPath(".")
 }
