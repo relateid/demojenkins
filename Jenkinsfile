@@ -6,5 +6,5 @@ node {
     sh 'ls -lart'
     echo '.......................................'
     
-    # kubernetes.image().withName("demojenkins").build().fromPath(".")
+    // kubernetes.image().withName("demojenkins").build().fromPath(".")
 }
