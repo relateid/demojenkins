@@ -3,5 +3,8 @@ node {
     if (!fileExists ('Dockerfile')) {
       echo 'NO Docker file'
     }
-    kubernetes.image().withName("demojenkins").build().fromPath(".")
+    sh 'ls -lart'
+    echo '.......................................'
+    
+    # kubernetes.image().withName("demojenkins").build().fromPath(".")
 }
