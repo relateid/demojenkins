@@ -1,20 +1,10 @@
-pipeline { 
-    agent any 
-    stages {
-        stage('Build') { 
-            steps { 
-                echo 'building...'
-            }
-        }
-        stage('Test'){
-            steps {
-                echo 'testing....' 
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'deploying...'
-            }
-        }
+node {
+    git 'https://github.com/relateid/demojenkins.git'
+    if (!fileExists ('Dockerfile')) {
+      echo 'NO Docker file
     }
+    if (fileExists ('Dockerfile')) {
+      echo 'YES Docker file
+    }
+    
 }
