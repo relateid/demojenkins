@@ -1,7 +1,8 @@
 pipeline {
     agent any
     tools { 
-        docker 'docker' 
+        docker 'docker'
+        git 'Default'
     }
     stages {
         stage ('Initialize') {
