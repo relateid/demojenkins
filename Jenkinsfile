@@ -1,7 +1,6 @@
 pipeline {
     agent any
-    tools { 
-        docker 'docker'
+    tools {
         git 'Default'
     }
     stages {
