@@ -1,12 +1,5 @@
-pipeline {
-    agent {
-        docker { image 'node:7-alpine' }
-    }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-            }
-        }
-    }
+docker.image('maven:3.3.3-jdk-8').inside {
+  // git '…your-sources…'
+  //sh 'mvn -B clean install'
+    sh 'Made it tommy... we realy made it'
 }
