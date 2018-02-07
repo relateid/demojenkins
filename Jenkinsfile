@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'node:7-alpine' }
-    }
+    agent any
     tools {
         git 'Default'
     }
@@ -10,7 +8,7 @@ pipeline {
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
-                    docker ps
+                    git --version
                 ''' 
             }
         }
