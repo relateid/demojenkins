@@ -1,23 +1,12 @@
-pipeline {
-    agent any
-    tools {
-        git 'Default'
-    }
-    stages {
-        stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    git --version
-                    docker ps
-                ''' 
-            }
-        }
+node {
 
-        stage ('Build') {
-            steps {
-                echo 'This is a minimal pipeline.'
-            }
-        }
-    }
+    checkout scm
+
+    env.DOCKER_API_VERSION="1.23"
+    
+    sh "git rev-parse --short HEAD > commit-id"
+    
+    stage "Build"
+    
+        sh "docker ps"
 }
