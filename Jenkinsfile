@@ -9,6 +9,7 @@ pipeline {
                 sh '''
                     echo "PATH = ${PATH}"
                     git --version
+                    docker ps
                 ''' 
             }
         }
